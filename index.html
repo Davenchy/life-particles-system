@@ -1,0 +1,129 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life Particles System</title>
+
+    <style>
+      #my_canvas {
+        background-color: #222;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      #help {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 20px;
+        color: white;
+        z-index: 2;
+        line-height: 2;
+      }
+
+      #gui.active {
+        display: block;
+      }
+      #gui {
+        display: none;
+        position: absolute;
+        overflow: hidden;
+        width: 450px;
+        top: 20px;
+        right: 20px;
+        bottom: 30px;
+        z-index: 3;
+        background-color: #eee;
+        padding: 16px;
+        color: #222;
+        border-radius: 6px;
+        border: 2px solid grey;
+      }
+
+      #variants,
+      #rules {
+        overflow-y: scroll;
+        height: 32%;
+        padding: 0 8px;
+        margin-top: 20px;
+      }
+
+      .option {
+        margin: 8 0;
+      }
+
+      #close-btn {
+        float: right;
+      }
+
+      .option .p-remove-btn {
+        margin-right: 16px;
+      }
+
+      #close-btn,
+      .option .p-remove-btn {
+        color: red;
+        cursor: pointer;
+        font-weight: bold;
+        font-family: sans-serif;
+      }
+
+      .option span {
+        margin-right: 8px;
+      }
+
+      .option input {
+        width: 50px;
+        margin-right: 14px;
+        background-color: transparent;
+        text-align: center;
+        border: none;
+        border-bottom: 2px solid #222;
+        color: blue;
+      }
+
+      .option input:disabled {
+        color: blue;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="help">
+      Press <b>Space</b> to toggle simulation state.<br />
+      To toggle GUI press <b>ctrl + g</b>.<br />
+      To apply changes press <b>ctrl + s</b>.
+    </p>
+    <div id="gui">
+      <span id="close-btn">X</span>
+
+      <center><h2>Simulation Controller</h2></center>
+      <button id="add-btn">Add</button>
+      <button id="apply-btn">Apply Changes</button>
+
+      <h4>Variants:</h4>
+      <div id="variants"></div>
+
+      <hr />
+      <h4>Rules:</h4>
+      <div id="rules"></div>
+    </div>
+    <canvas id="my_canvas"></canvas>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+
+    <script src="particle.js"></script>
+    <script src="particles-system.js"></script>
+    <script src="gui.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
